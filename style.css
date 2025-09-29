@@ -22,19 +22,27 @@ body {
   line-height: 1.6;
 }
 
+.main-header-container {
+  background-color: var(--cor-secundaria); 
+  background-image: url(imagens/header.png);
+  background-size: cover; 
+  background-position: center;
+  background-repeat: repeat; 
+  border-radius: 10px 10px 0 0; 
+}
+
 .header {
   display: flex; 
   justify-content: space-between; 
   align-items: center; 
-  background-color: var(--cor-secundaria); 
   padding: 20px 40px;
-  border-radius: 10px 10px 0 0; 
 }
 
 .header .logo h1 {
-  font-family: 'MuseoModerno', sans-serif;
-  font-size: 34px;
-  color: #ffffff;
+
+  background-image: url(imagens/logo\ biblioteca.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .header .search-bar input {
@@ -52,9 +60,7 @@ body {
   padding: 8px 15px;
   border-radius: 20px;
 }
-
 .navigation {
-  background-color: var(--cor-secundaria); 
   padding: 10px 20px;
 }
 
