@@ -61,14 +61,14 @@ header .logo {
   position: absolute;
   top: 10px;
   left: 20px;
-  width: 260px; /* apenas a logo maior */
+  width: 260px; 
 }
 
 .header .search-bar input {
   border: 1px solid #ccc;
-  border-radius: 30px; /* bordas mais arredondadas */
+  border-radius: 30px; 
   padding: 14px 30px;
-  width: 400px; /* barra de pesquisa maior */
+  width: 400px; 
   font-size: 1.2em;
   outline: none;
 }
