@@ -21,7 +21,15 @@ body {
   color: var(--cor-texto);
   line-height: 1.6;
   font-size: large;
+  width: 100%; 
+}
 
+@media screen and (max-width: 768px) {
+  /* Estilos para telas menores que 768px */
+  .menu {
+    display: block; /* O menu fica em coluna */
+    width: 100%;
+  }
 }
 
 .main-header-container {
