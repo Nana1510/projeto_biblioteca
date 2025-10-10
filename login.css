@@ -1,74 +1,106 @@
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap');
-
-html, body {
-  width: 100%;
-  height: 100%;
+body {
+  font-family: "MuseoModerno", sans-serif;
+  background-color: #f6e5b8;
   margin: 0;
-  padding: 0;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 :root {
   --cor-fundo: #E9D7B4;
   --cor-texto: #ffffff;
+  --cor-primaria: #270216;
   --cor-secundaria: #8D5740;
-}
-
-body {
-  background-color: var(--cor-fundo);
-  font-family: 'MuseoModerno', sans-serif;
-  color: var(--cor-texto);
-  line-height: 1.6;
-  font-size: large;
+  --cor-borda: #e9f2ff;
+  --cor-botoes: #E9D7B4;
 }
 
 .main-header-container {
-    width: 100%;
-    height: 160px;
-    background-color: var(--cor-secundaria);
-    background-image: url(imagens/header.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat;
-    border-radius: 10px 10px 0 0;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .main-header-container h1 {
-    color: var(--cor-texto);
-    margin: 0;
-    padding: 0 20px;
-    text-align: center;
-    font-size: 2.5rem;
-    line-height: 1;
-  }
+  background-image: url(imagens/header.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  text-align: center;
+  padding: 30px 0;
+  margin: 30px;
+}
 
-.rodape {
+.main-header-container h1 {
+  color: var(--cor-texto);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ==== MAIN ==== */
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  background-color: var(--cor-fundo);
+  border-radius: 10px;
+  padding: 40px;
+  margin: 0 20px;
+  position: relative;
+}
+
+/* Linha divisória entre as duas colunas */
+main::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  bottom: 10%;
+  width: 2px;
+  background-color: cor var(--cor-secundaria);
+  transform: translateX(-50%);
+}
+
+/* ==== SEÇÕES ==== */
+section {
+  width: 45%;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: var(--cor-secundaria);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto);
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--cor-botoes);
+}
+
+
+.rodape{
   background-color: var(--cor-secundaria);
   position: absolute;
-  bottom: 0;
+  bottom: 0%;
   width: 100%;
-  color: var(--cor-texto);
-  padding: 10px 20px;
+  color:#ffffff
 }
 
 .rodape a {
-  color: var(--cor-texto);
-  text-decoration: none;
-}
-
-@media screen and (max-width: 768px) {
-  .menu {
-    display: block;
-    width: 100%;
-  }
+  color: #fff;
 }
