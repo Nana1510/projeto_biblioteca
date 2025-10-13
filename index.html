@@ -1,68 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Biblioteca Dirce</title>
+    <title>Biblioteca Dirce - Home</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="main-header-container">
-        <div class="header">
-            <h1><a href="index.html"><img src="imagens/logo biblioteca.png" alt="Logo" class="logo"></a></h1>
-            <div class="search-bar"><input type="text" placeholder="Pesquisar..." /></div>
-            <div class="login"><a href="login.html">login/entrar</a></div>
-        </div>
     
+    <div class="main-header-container">
+        <header class="header">
+            <h1>Biblioteca Dirce</h1>
+            
+            <div class="header-elements">
+                <div class="search-bar">
+                    <input type="text" placeholder="Pesquisar..." />
+                </div>
+                <div class="login">
+                    <a href="login.html">login/entrar</a>
+                </div>
+            </div>
+        </header>
+
         <nav class="navigation">
             <ul>
-                <li><a href="#">Comunidade</a></li>
-                <li><a href="#">Catálogo</a></li>
-                <li><a href="#">Perfil</a></li>
-                <li><a href="#">favoritos</a></li>
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="perfil.html">perfil</a></li>
+                <li><a href="favoritos.html">favoritos</a></li>
             </ul>
         </nav>
-    </header>
-
-   <main>
+    </div>
+    <main>
+        
+       <section class="recomendados">
     <div class="recomendados-btn">
         <button>Recomendados</button>
     </div>
 
-    <section class="recomendados-livros">
-        <div class="livro">
-            <a href="emprestimo.html">
-                <img src="livros/alice.jpg" alt="Alice no país das maravilhas">
-              </a>
-            <p>Alice no país das maravilhas</p>
-        </div>
-        <div class="livro">
-            <a href="emprestimo.html">
-            <img src="livros/a hipótese do amor.jpg" alt="A hipótese do amor">
-            <p>A hipótese do amor</p>
-        </div>
-        <div class="livro">
-            <a href="emprestimo.html">
-            <img src="livros/coraline.jpg" alt="Coraline">
-            <p>Coraline</p>
-        </div>
-        <div class="livro">
-            <a href="emprestimo.html">
-            <img src="livros/sol da meia noite.jpg" alt="sol da meia noite">
-            <p>Sol da meia noite</p>
-        </div>
-        <div class="livro">
-            <a href="emprestimo.html">
-            <img src="livros/verity.jpg" alt="Verity">
-            <p>Verity</p>
-        </div>
-    </section>
-</main>
+    <div class="recomendados-livros">
+        
+        <a href="emprestimo.html" class="livro-link">
+            <div class="livro">
+                <img src="livros/alice.jpg" alt="alice"> 
+                <p>Alice no país das maravilhas</p>
+            </div>
+        </a>
 
-    <footer>
-        <div class="rodape">
-          <p>Contato: <a href="mailto:biblioteca_dirce@gmail.com">biblioteca_dirce@gmail.com</a></p>
-        </div>
+        <a href="emprestimo.html" class="livro-link">
+            <div class="livro">
+                <img src="livros/coraline.jpg" alt="coraline">
+                <p>Coraline</p>
+            </div>
+        </a>
+
+        <a href="emprestimo.html" class="livro-link">
+            <div class="livro">
+                <img src="livros/a hipótese do amor.jpg" alt="a hipótese">
+                <p>A hipótese do Amor</p>
+            </div>
+        </a>
+
+        <a href="emprestimo.html" class="livro-link">
+            <div class="livro">
+                <img src="livros/verity.jpg" alt="verity">
+                <p>verity</p>
+            </div>
+        </a>
+
+        <a href="emprestimo.html" class="livro-link">
+            <div class="livro">
+                <img src="livros/sol da meia noite.jpg" alt="crepusculo">
+                <p>Sol da Meia noite</p>
+            </div>
+        </a>
+
+        <a href="emprestimo.html" class="livro-link">
+            <div class="livro">
+                <img src="livros/dracula.jpg" alt="Drácula">
+                <p>Drácula</p>
+            </div>
+        </a>
+        
+    </div>
+</section>
+
+    </main>
+
+    <footer class="rodape">
+        Email: biblioteca_dirce@gmail.com
     </footer>
+    
 </body>
 </html>

@@ -1,0 +1,249 @@
+/* --- ESTILOS ESPECÍFICOS DA PÁGINA DE EMPRÉSTIMO --- */
+
+/* Estilos de Header (mantidos para consistência) */
+.header-elements {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.header .search-bar {
+    display: flex;
+    flex-grow: 1;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+}
+
+.header .search-bar input {
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 1.2em;
+    outline: none;
+    background-color: var(--cor-botoes);
+    color: #000;
+}
+/* Fim dos estilos do header */
+
+
+/* Container Principal e Layout de Colunas */
+.emprestimo-main-content {
+    padding: 40px 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.emprestimo-container {
+    display: flex;
+    /* CRÍTICO: Estica as colunas para que todas tenham a altura da coluna mais alta */
+    align-items: stretch; 
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    background-color: var(--cor-fundo);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    padding: 30px;
+
+    color: #000;
+}
+
+/* COLUNA ESQUERDA (IMAGEM, AVALIAÇÃO, etc.) */
+.coluna-esquerda {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+    background-color: var(--cor-secundaria);
+    padding: 15px;
+    border-radius: 10px;
+    color: var(--cor-texto);
+}
+
+.livro-capa {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.titulo-avaliacao {
+    color: var(--cor-texto);
+    margin: 15px 0 0 0;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+/* LISTRA DIVISÓRIA MARROM GROSSA */
+.separator {
+    width: 80%;
+    height: 3px;
+    background-color: var(--cor-secundaria);
+    margin: 8px 0 15px 0;
+    border-radius: 5px;
+}
+
+.estrelas-container {
+    display: flex;
+    justify-content: center;
+    background-color: var(--cor-botoes);
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.estrelas-container img {
+    width: 25px;
+    margin: 0 2px;
+}
+
+.comentarios-box {
+    background-color: var(--cor-botoes);
+    color: var(--cor-secundaria);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color var(--transicao-suave);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.livro-tag {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    padding: 8px 30px;
+    border-radius: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: fit-content;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* COLUNA DIREITA (DESCRIÇÃO E AÇÕES) - CORRIGIDA */
+.coluna-direita {
+    flex-grow: 1;
+    /* CRÍTICO: Define como container flexível vertical */
+    display: flex;
+    flex-direction: column;
+    /* Garante que a coluna use toda a altura esticada pelo pai */
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.descricao-texto {
+    /* REMOVIDO o flex-grow: 1 para não interferir no fluxo normal do texto. */
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* NOVO BLOCO CRÍTICO: Empurra o elemento #acao-inicial (que contém o bloco marrom) para o fundo */
+/* Nota: Como o elemento .descricao-texto não tem flex-grow: 1, ele será seguido
+   por um elemento invisível (como um div vazio) ou o bloco #acao-inicial que será
+   empurrado para baixo. Isso mantém o texto em seu tamanho natural. */
+#acao-inicial {
+    /* O margin-top: auto é a solução para empurrar o bloco para baixo */
+    margin-top: auto;
+}
+
+/* ÁREA DE AÇÕES (Bloco Marrom dos BOTÕES e DISPONIBILIDADE) */
+.botoes-acao {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    
+    width: 100%;
+    
+    background-color: var(--cor-secundaria);
+    padding: 20px;
+
+    /* Arredondamento total em todos os cantos */
+    border-radius: 10px;
+}
+
+.botao-emprestar {
+    background-color: var(--cor-texto);
+    color: var(--cor-secundaria);
+    padding: 18px 45px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color var(--transicao-suave), transform var(--transicao-suave);
+    flex-shrink: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.botao-emprestar:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.03);
+}
+
+.disponibilidade-box {
+    background-color: var(--cor-texto);
+    color: var(--cor-secundaria);
+    padding: 14px 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.disponibilidade-box p {
+    font-size: 0.9em;
+    margin-bottom: 3px;
+    color: var(--cor-secundaria);
+}
+
+.disponibilidade-box strong {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--cor-secundaria);
+}
+
+/* Estilo da Área de Confirmação (Após o clique) */
+.info-confirmacao strong {
+    font-weight: bold;
+    color: #8D5740;
+}
+.info-confirmacao span {
+    font-weight: normal;
+    color: #333;
+}
+
+
+/* MEDIA QUERIES para responsividade */
+@media (max-width: 900px) {
+    .emprestimo-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .coluna-esquerda {
+        width: 100%;
+        max-width: 300px;
+    }
+    .coluna-direita {
+        width: 100%;
+        /* Em mobile, é crucial definir height: auto para não ter rolagem estranha */
+        height: auto; 
+    }
+    /* Em mobile, o margin-top: auto não é mais necessário e pode ser substituído por uma margem fixa */
+    #acao-inicial {
+        margin-top: 20px; 
+    }
+}

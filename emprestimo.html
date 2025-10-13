@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Dirce - Empréstimo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="emprestimo.css">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="main-header-container">
+        <header class="header">
+            <h1>Biblioteca Dirce</h1>
+            <div class="header-elements">
+                <div class="search-bar">
+                    <input type="text" placeholder="Pesquisar..." />
+                </div>
+                <div class="login">
+                    <a href="login.html">login/entrar</a>
+                </div>
+            </div>
+        </header>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="perfil.html">perfil</a></li>
+                <li><a href="favoritos.html">favoritos</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="emprestimo-main-content">
+        <div class="emprestimo-container">
+
+            <div class="coluna-esquerda">
+                <img src="livros/coraline.jpg" alt="Capa do Livro Coraline" class="livro-capa">
+                <h2 class="titulo-avaliacao">Coraline</h2>
+                <div class="estrelas-container">
+                    <img src="imagens/estrela.png" alt="Estrela cheia">
+                    <img src="imagens/estrela.png" alt="Estrela cheia">
+                    <img src="imagens/estrela.png" alt="Estrela cheia">
+                    <img src="imagens/estrela.png" alt="Estrela vazia">
+                    <img src="imagens/estrela.png" alt="Estrela vazia">
+                </div>
+            </div>
+
+            <div class="coluna-direita">
+
+                <p class="descricao-texto">
+                    O livro Coraline, de Neil Gaiman, conta a história de Coraline, uma menina curiosa que se muda
+                    para uma casa antiga e descobre uma porta secreta que a leva a um mundo paralelo onde seus pais
+                    e vizinhos são versões de si mesmos, mas com botões nos olhos. Ela precisa lutar contra a "Outra
+                    Mãe" para salvar sua família e a si mesma.
+                </p>
+
+                <div id="acao-inicial" style="display: block;">
+                    <div class="botoes-acao">
+                        <button id="emprestar-livro" class="botao-emprestar"
+                            onclick="document.getElementById('acao-inicial').style.display = 'none'; document.getElementById('emprestimo-confirmacao').style.display = 'block';">
+                            emprestar
+                        </button>
+
+                        <div class="disponibilidade-box">
+                            <p>disponíveis...</p>
+                            <strong id="disp-contagem">48</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="emprestimo-confirmacao" style="display: none;">
+                    <h3 style="color: #8D5740; margin-top: 20px;">Empréstimo Registrado com Sucesso!</h3>
+
+                    <div class="info-confirmacao"
+                        style="background-color: #f0e1c2; padding: 15px; border-radius: 8px; margin-top: 15px; color: #000;">
+                        <p><strong>Livro:</strong> <span>Coraline</span></p>
+                        <p><strong>Autor:</strong> <span>Neil Gaiman</span></p>
+                        <p><strong>Páginas:</strong> <span>176</span></p>
+                        <hr style="border-color: #ccc;">
+                        <p><strong>Data do Empréstimo:</strong> <span>13/10/2025</span></p>
+                        <p><strong>Data de Devolução:</strong> <span
+                                style="color: #8D5740; font-weight: bold;">28/10/2025</span></p>
+                    </div>
+
+                    <button onclick="window.location.href='index.html'" class="botao-emprestar"
+                        style="margin-top: 20px; background-color: #c1937f;">Ir para o Menu</button>
+                </div>
+            </div>
+    </main>
+
+    <footer class="rodape">
+        Email: biblioteca_dirce@gmail.com
+    </footer>
+
+</body>
+
+</html>

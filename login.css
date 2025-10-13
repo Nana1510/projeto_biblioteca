@@ -1,106 +1,252 @@
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap');
-body {
-  font-family: "MuseoModerno", sans-serif;
-  background-color: #f6e5b8;
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-  --cor-fundo: #E9D7B4;
-  --cor-texto: #ffffff;
-  --cor-primaria: #270216;
-  --cor-secundaria: #8D5740;
-  --cor-borda: #e9f2ff;
-  --cor-botoes: #E9D7B4;
+  --marrom-escuro: #8D5740;
+  --bege-fundo: #E9D7B4;
+  --marrom-header: #5A3A2E;
+  --texto-claro: #fff;
+  --cinza-placeholder: #666; /* Cor dos placeholders no Figma */
+  --google-blue: #4285F4; /* Cor do botão do Google */
+}
+
+body {
+  font-family: 'MuseoModerno', sans-serif;
+  color: #000;
+  background-color: var(--bege-fundo);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, span, .form-text {
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  
+  flex: 1;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1200px;
+  gap: 20px;
+  padding: 50px 0px;
 }
 
 .main-header-container {
-  background-image: url(imagens/header.png);
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
+  width: 100%;
+  padding: 25px 0;
   text-align: center;
-  padding: 30px 0;
-  margin: 30px;
+  color: var(--texto-claro);
+  
+  background-color: var(--marrom-header);
+  background-image: url('imagens/header.png'); /* Certifique-se que o caminho está correto */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .main-header-container h1 {
-  color: var(--cor-texto);
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
 }
 
-/* ==== MAIN ==== */
-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  background-color: var(--cor-fundo);
-  border-radius: 10px;
-  padding: 40px;
-  margin: 0 20px;
-  position: relative;
-}
-
-/* Linha divisória entre as duas colunas */
-main::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 10%;
-  bottom: 10%;
-  width: 2px;
-  background-color: cor var(--cor-secundaria);
-  transform: translateX(-50%);
-}
-
-/* ==== SEÇÕES ==== */
 section {
-  width: 45%;
-}
+  width: 562px;
+  padding: 20px 40px; 
 
-h3 {
-  font-size: 1.4rem;
-  color: var(--cor-secundaria);
-}
-
-form {
-  display: flex;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 15px;
+  
+  display: flex; /* Para organizar os elementos em coluna */
   flex-direction: column;
-  gap: 10px;
+  align-items: flex-start; /* Alinha o conteúdo da seção à esquerda */
 }
+
+section h3 {
+  font-size: 1.5rem;
+  color: #000;
+  margin-bottom: 20px; /* Aumentado um pouco para espaçar do primeiro input */
+  text-align: left; /* Alinha o título à esquerda, como no Figma */
+  width: 100%; /* Garante que o título ocupe a largura total */
+}
+
+/* Remove a regra para 'label' pois não teremos mais tags <label> visíveis */
 
 input {
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
+  width: 100%;
+  padding: 12px 15px; /* Ajustado padding para ter mais "ar" interno, como no Figma */
   font-size: 1rem;
+  
+  margin-top: 0px;
+  margin-bottom: 15px; /* Mais espaço entre os inputs para replicar o Figma */
+  
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #333;
 }
 
+/* Estilo para placeholder */
+input::placeholder {
+    color: var(--cinza-placeholder);
+    font-weight: bold; /* No Figma o placeholder parece bold */
+}
+
+/* Regra específica para os tipos de input */
+input[type="text"], input[type="password"], input[type="email"] {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 15px; /* Mantém 15px de espaço entre inputs */
+}
+
+/* Contêiner para o campo de senha com ícone de olho */
+.password-field-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px; /* Espaçamento abaixo do campo de senha */
+}
+
+.password-field-container input {
+    margin-bottom: 0; /* O input dentro do container não precisa de margem inferior */
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px; /* Posição do olho */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px; /* Tamanho do ícone */
+    height: 24px;
+    background-image: url(''); /* Caminho para o ícone do olho */
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/* Botão padrão (será sobrescrito pelos botões específicos) */
 button {
-  background-color: var(--cor-secundaria);
-  color: var(--cor-texto);
-  border: none;
-  border-radius: 8px;
-  padding: 10px;
+  width: 100%; /* Botões do Figma ocupam 100% */
+  padding: 12px; /* Ajustado para ter mais padding, como no Figma */
   font-size: 1rem;
   cursor: pointer;
+  font-weight: bold; /* Os botões no Figma parecem bold */
+  
+  border: none;
+  border-radius: 8px;
+  background-color: var(--marrom-escuro);
+  color: var(--texto-claro);
+  
+  transition: transform 0.2s ease, background 0.3s ease;
+  margin-bottom: 15px; /* Espaço entre botões e inputs */
 }
 
 button:hover {
-  background-color: var(--cor-botoes);
+  transform: scale(1.02); /* Escala um pouco menos no hover */
+  background-color: #a26c4f;
 }
 
-
-.rodape{
-  background-color: var(--cor-secundaria);
-  position: absolute;
-  bottom: 0%;
+/* Botões Específicos do Login */
+.access-account-button {
   width: 100%;
-  color:#ffffff
+  background-color: var(--marrom-escuro);
+  color: #fff;
+  padding: 14px 30px; /* Padding maior */
+  font-size: 1.1em;
+  margin-bottom: 20px; /* Espaço maior antes do separador */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.rodape a {
+.google-login-button {
+  background-color: #fff; /* Fundo branco */
+  color: #000; /* Texto preto */
+  border: 1px solid #ccc; /* Borda leve */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 0; /* É o último elemento na seção de login */
+  padding: 12px 20px; /* Padding ajustado */
+}
+
+.google-login-button img {
+    width: 20px; /* Tamanho do ícone do Google */
+    height: 20px;
+}
+
+/* Separador "OU" */
+.or-separator {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ccc; /* Linha sutil */
+    line-height: 0.1em;
+    margin: 20px 0; /* Espaçamento acima e abaixo do "OU" */
+    color: var(--cinza-placeholder); /* Cor do texto "OU" */
+}
+
+.or-separator span {
+    background: var(--bege-fundo); /* Fundo da main, para o "OU" ficar sobre a linha */
+    padding: 0 10px;
+    font-weight: normal; /* "OU" não é bold no Figma */
+}
+
+
+/* Botão de Criação de Conta por Telefone */
+.create-phone-account-button {
+    width: 100%;
+    background-color: var(--marrom-escuro); /* Mesmo estilo do botão de login */
+    color: #fff;
+    padding: 14px 30px;
+    font-size: 1.1em;
+    margin-top: 20px; /* Espaçamento após o "OU" */
+    margin-bottom: 0; /* É o último elemento na seção de cadastro */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Removido seletor section#cadastro button[type="submit"] e seu hover pois não é mais usado */
+
+footer {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+  
+  background-color: var(--marrom-escuro);
+  color: var(--texto-claro);
+  
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+footer a {
   color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    width: 90%;
+  }
 }
